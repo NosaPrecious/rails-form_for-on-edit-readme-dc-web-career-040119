@@ -25,7 +25,7 @@ class PostsController < ApplicationController
 
 	def update
 	  @post = Post.find(params[:id])
-	  @post.update(strong_params(:title, :description))
+	  @post.update(strong_params(:title)
 	  redirect_to post_path(@post)
 	end
 	
