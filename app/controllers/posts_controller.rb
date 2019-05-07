@@ -28,4 +28,11 @@ class PostsController < ApplicationController
 	  @post.update(title: params[:title], description: params[:description])
 	  redirect_to post_path(@post)
 	end
+	
+	private
+	
+	def strong_params(*args)
+	  params.rquire(:post).permit(:title, :description)
+	end
+	
 end
